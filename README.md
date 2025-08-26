@@ -13,9 +13,8 @@ O objetivo é apresentar minhas **habilidades técnicas, formação, experiênci
 ---
 
 ## 📂 Estrutura do site
-- **Home / Sobre mim** – apresentação, habilidades e certificações.  
+- **Home** - tela inicial
+- **Sobre mim** – apresentação, habilidades e certificações.  
 - **Projetos** – cards com links diretos para meus repositórios do GitHub.  
-- **Experiência** – histórico profissional.  
-- **Formação** – trajetória acadêmica.  
 - **Contato** – email, LinkedIn e GitHub.  
 
