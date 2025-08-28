@@ -26,6 +26,8 @@ header {
     align-items: center;
     height: 60px;
     border-bottom: 2px solid #CFC5F9;
+    position: fixed;
+    width: 100%;
 }
 
 nav {
@@ -167,4 +169,65 @@ section{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border: 5px solid var(--cor4);
     object-fit: cover;
+}
+
+/*Knowledge Cards*/
+
+.knowledge {
+    background: linear-gradient(to right, var(--cor1), var(--cor2), var(--cor5));
+    flex-direction: column;
+    text-align: center;
+}
+
+.knowledge h2 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.knowledge-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: var(--cor6);
+}
+
+.card:hover {
+    background-color: var(--cor4);
+    transition: 0.3s;
+}
+
+.card h3 {
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.card p {
+    color: #000;
+    font-weight: 500;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 20px;
+    
+}
+
+
+.card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
 }
