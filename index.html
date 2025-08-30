@@ -9,14 +9,19 @@
 
 </head>
 
-<body>
+<body onresize="tamanho()">
     <header>
         <div class="initial">
             <h1><a href="">Matheus Petry</a></h1>
         </div>
         <div class="menu">
-            <nav>
-                <ul>
+            <nav id="itens">
+                <button class="menu-hamburguer" aria-expanded="false" aria-controls="menu-principal">
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                </button>
+                <ul id="menu-principal">
                     <li><a href="#about-me">Sobre mim</a></li>
                     <li><a href="#knowledge">Conhecimentos</a></li>
                     <li><a href="#projects">Projetos</a></li>
@@ -35,7 +40,7 @@
                 </div>
             </div>
             <div class="initial-image">
-                <img src="assets/images/Front-end.png" alt="Gif de um desenvolvedor">
+                <img src="assets/images/Front-end.gif" alt="Gif de um desenvolvedor">
             </div>
 
         </section>
@@ -48,7 +53,8 @@
                     Atualmente, estou cursando Engenharia de Software na Uniasselvi. Tenho experiência em
                     desenvolvimento front-end,
                     utilizando tecnologias como HTML, CSS, JavaScript. Estou sempre em busca de novos desafios
-                    e oportunidades para aprimorar minhas habilidades e contribuir para projetos interessantes.</p>
+                    e oportunidades para aprimorar minhas habilidades e contribuir para projetos interessantes.
+                </p>
             </div>
             <div class="image">
                 <img src="assets/images/imagemPrincipal.jpg" alt="Imagem de Matheus Petry">
@@ -144,8 +150,11 @@
                 </ul>
             </div>
         </section>
-
     </main>
+
+    <footer>
+        <p>&copy; 2024 Matheus Petry. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="assets/script.js"></script>
 </body>

@@ -9,16 +9,42 @@
     --cor6: #CFC5F9;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+}
+
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.barra {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor6);
+    margin: 5px 0;
+    transition: 0.4s;
 }
 
 /*Header*/
@@ -38,9 +64,13 @@ header {
     border-bottom: 2px solid var(--cor6);
 }
 
+
 nav {
-    width: 500px;
-    font-size: 16px;
+    display: flex; /* Transforma o contêiner em um Flexbox */
+    justify-content: space-between; /* Alinha os itens nas extremidades opostas */
+    align-items: center; /* Centraliza os itens verticalmente */
+    padding: 1.5rem 2rem; /* Adiciona espaçamento interno */
+    width: 100%;
 }
 
 nav ul {
@@ -73,9 +103,11 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo principal crescer para empurrar o footer */
+    padding-top: 80px; /* Adiciona espaço para o header fixo */
 }
 
-section{
+section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,10 +119,10 @@ section{
 .initial-section {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 200px;
+    justify-content: space-evenly; /* Mais flexível que um gap fixo */
+    gap: 2rem; /* Garante um espaçamento mínimo */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background: var(--cor4); 
+    background: var(--cor4);
     color: #1E293B;
 }
 
@@ -104,6 +136,7 @@ section{
     font-size: 40px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
+    color: #1E293B;
 }
 
 .initial-text h3 {
@@ -141,17 +174,17 @@ section{
 /*Text and Image About-me*/
 
 .about-me {
-    background: #fff; /* fundo branco */
+    background: var(--cor6);
     color: #1E293B;
 }
 
 .text {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 400px;
-    color: #000;
-   
+    max-width: 500px;
+    height: auto;
+    color: #1E293B;
+
 }
 
 .text h2 {
@@ -164,7 +197,7 @@ section{
 .text p {
     font-size: 16px;
     font-weight: 500;
-    margin: 40px 100px 0 0;
+    margin: 40px 0 0 0; /* Removida margem direita fixa para evitar overflow */
     line-height: 20px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -173,7 +206,6 @@ section{
     width: 300px;
     height: 400px;
     border-radius: 20px;
-    margin-left: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border: 5px solid var(--cor4);
     object-fit: cover;
@@ -182,7 +214,8 @@ section{
 /*Knowledge Cards*/
 
 .knowledge {
-    background: var(--cor4); /* lavanda clara */
+    background: var(--cor4);
+    /* lavanda clara */
     color: #1E293B;
     flex-direction: column;
     text-align: center;
@@ -208,7 +241,6 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 20px;
     width: calc(25% - 20px);
     height: 300px;
     border-radius: 20px;
@@ -234,7 +266,7 @@ section{
     text-align: center;
     line-height: 20px;
     font-size: 15px;
-    
+
 }
 
 .knowledge .card img {
@@ -245,7 +277,7 @@ section{
 /*Project Cards*/
 
 .projects {
-    background: #F9FAFB;
+    background: var(--cor6);
     color: #1E293B;
     flex-direction: column;
     text-align: center;
@@ -274,12 +306,12 @@ section{
     width: calc(33.33% - 20px);
     height: 300px;
     border-radius: 20px;
-    background-color: var(--cor6);
+    background-color: var(--cor4);
     padding: 10px;
 }
 
 .projects .card:hover {
-    background-color: var(--cor4);
+    background-color: var(--cor1);
     transition: 0.3s;
 }
 
@@ -329,7 +361,8 @@ section{
 /*Contact Cards*/
 
 .contact {
-    background: var(--cor4); /* lavanda clara */
+    background: var(--cor4);
+    /* lavanda clara */
     color: #1E293B;
     flex-direction: column;
     text-align: center;
@@ -388,4 +421,167 @@ section{
     height: 30px;
 }
 
+/*Footer*/
 
+footer {
+    background-color: var(--cor3);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;    
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .initial-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .initial-text {
+        align-items: center;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .initial-image img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .initial-links {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .initial-links a {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .text {
+        max-width: 500px;
+        height: auto;
+        align-items: center; /* Centraliza o conteúdo do texto */
+        text-align: center;
+    }
+
+    .about-me {
+        flex-direction: column;
+        gap: 50px;
+        align-items: center; /* Centraliza os blocos de texto e imagem */
+    }
+ 
+    .knowledge .card,
+    .projects .card {
+        width: calc(50% - 20px);
+    }
+
+    .project-cards .card p {
+        margin-top: 0px;
+    }
+
+    .project-cards .card a {
+        width: 120px;
+        padding: 5px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Ajustado para a altura correta do header */
+        left: 0;
+        background-color: var(--cor3);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding-left: 0;
+    }
+
+    
+    nav ul.ativo {
+        display: flex;
+    }
+
+    .menu-hamburguer {
+        display: block; 
+    }
+
+    section {
+        padding: 4rem 1.5rem; /* Reduz o padding geral para telas menores */
+    }
+
+    .initial h1,
+    .initial-section h1 {
+        font-size: 24px;
+    }
+
+    .initial-image img {
+        max-width: 250px;
+        height: 150px;
+    } 
+
+    .initial-links a {
+        max-width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .text {
+        max-width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    .text p {
+        margin: 20px 0 0 0; /* Ajusta margem para parágrafo em telas pequenas */
+    }
+
+    /* As regras para .about-me já são herdadas do breakpoint de 1000px */
+
+    .image img {
+        width: 100%;
+        max-width: 300px; /* Limita a largura máxima da imagem */
+        height: 350px;
+    }
+
+    .knowledge .card,
+    .projects .card {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .projects .card h3 {
+        font-size: 20px;
+        margin: 10px 0 0 0;
+    }
+
+    .projects .card p {
+        font-size: 14px;
+        margin: 10px 0 0 0;
+    }
+
+    .projects .card a {
+        margin: 10px 0 0 0;
+    }
+
+    .contact ul {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
