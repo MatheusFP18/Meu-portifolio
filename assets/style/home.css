@@ -96,6 +96,16 @@ a {
     color: #fff;
 }
 
+nav ul li a.active {
+    background-color: var(--cor4);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor2);
+}
+
 /*Main*/
 
 main {
@@ -337,10 +347,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: auto;
     border: 2px solid #DA20FA;
-    border-radius: 20px;
+    border-radius: 20px;;
     text-decoration: none;
     color: #000;
 }
@@ -355,6 +365,7 @@ section {
     width: 210px;
     height: 200px;
     border-radius: 5px;
+    border: 2px solid var(--cor5);
     object-fit: cover;
 }
 
@@ -503,7 +514,7 @@ footer p {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 80px; /* Ajustado para a altura correta do header */
+        top: 60px; /* Ajustado para a altura correta do header */
         left: 0;
         background-color: var(--cor3);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
