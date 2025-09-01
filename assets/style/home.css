@@ -60,16 +60,16 @@ header {
     z-index: 1000;
     width: 100%;
     height: 80px;
-    background-color: var(--cor3);
+    background-color: var(--cor1);
     border-bottom: 2px solid var(--cor6);
 }
 
 
 nav {
-    display: flex; /* Transforma o contêiner em um Flexbox */
-    justify-content: space-between; /* Alinha os itens nas extremidades opostas */
-    align-items: center; /* Centraliza os itens verticalmente */
-    padding: 1.5rem 2rem; /* Adiciona espaçamento interno */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1.5rem 2rem; 
     width: 100%;
 }
 
@@ -102,10 +102,6 @@ nav ul li a.active {
     padding: 10px;
 }
 
-nav ul li a:hover {
-    background-color: var(--cor2);
-}
-
 /*Main*/
 
 main {
@@ -113,8 +109,8 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-grow: 1; /* Faz o conteúdo principal crescer para empurrar o footer */
-    padding-top: 80px; /* Adiciona espaço para o header fixo */
+    flex-grow: 1;
+    padding-top: 80px;
 }
 
 section {
@@ -129,10 +125,10 @@ section {
 .initial-section {
     display: flex;
     align-items: center;
-    justify-content: space-evenly; /* Mais flexível que um gap fixo */
-    gap: 2rem; /* Garante um espaçamento mínimo */
+    justify-content: space-evenly;
+    gap: 2rem; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background: var(--cor4);
+    background: linear-gradient(135deg, var(--cor4), var(--cor2));
     color: #1E293B;
 }
 
@@ -207,7 +203,7 @@ section {
 .text p {
     font-size: 16px;
     font-weight: 500;
-    margin: 40px 0 0 0; /* Removida margem direita fixa para evitar overflow */
+    margin: 40px 40px 0 0;
     line-height: 20px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -225,7 +221,6 @@ section {
 
 .knowledge {
     background: var(--cor4);
-    /* lavanda clara */
     color: #1E293B;
     flex-direction: column;
     text-align: center;
@@ -373,7 +368,6 @@ section {
 
 .contact {
     background: var(--cor4);
-    /* lavanda clara */
     color: #1E293B;
     flex-direction: column;
     text-align: center;
@@ -385,6 +379,13 @@ section {
     font-family: 'Montserrat', sans-serif;
     margin-top: 20px;
     margin-bottom: 50px;
+}
+
+.contact p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-cards {
@@ -435,7 +436,7 @@ section {
 /*Footer*/
 
 footer {
-    background-color: var(--cor3);
+    background-color: var(--cor1);
     color: #fff;
     text-align: center;
     padding: 20px 0;    
@@ -481,14 +482,14 @@ footer p {
     .text {
         max-width: 500px;
         height: auto;
-        align-items: center; /* Centraliza o conteúdo do texto */
+        align-items: center;
         text-align: center;
     }
 
     .about-me {
         flex-direction: column;
         gap: 50px;
-        align-items: center; /* Centraliza os blocos de texto e imagem */
+        align-items: center;
     }
  
     .knowledge .card,
@@ -508,13 +509,13 @@ footer p {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {  
     nav ul {
         display: none; 
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 60px; /* Ajustado para a altura correta do header */
+        top: 60px; 
         left: 0;
         background-color: var(--cor3);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -531,7 +532,11 @@ footer p {
     }
 
     section {
-        padding: 4rem 1.5rem; /* Reduz o padding geral para telas menores */
+        padding: 4rem 1.5rem;
+    }
+
+    .initial h1 {
+        padding-left: 10px;
     }
 
     .initial h1,
@@ -559,14 +564,12 @@ footer p {
     }
 
     .text p {
-        margin: 20px 0 0 0; /* Ajusta margem para parágrafo em telas pequenas */
+        margin: 20px 0 0 0;
     }
-
-    /* As regras para .about-me já são herdadas do breakpoint de 1000px */
 
     .image img {
         width: 100%;
-        max-width: 300px; /* Limita a largura máxima da imagem */
+        max-width: 300px;
         height: 350px;
     }
 
@@ -594,5 +597,4 @@ footer p {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
 }
