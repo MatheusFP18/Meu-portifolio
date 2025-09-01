@@ -129,8 +129,8 @@ section {
 .initial-section {
     display: flex;
     align-items: center;
-    justify-content: space-evenly; /* Mais flexível que um gap fixo */
-    gap: 2rem; /* Garante um espaçamento mínimo */
+    justify-content: space-evenly;
+    gap: 2rem; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     background: var(--cor4);
     color: #1E293B;
