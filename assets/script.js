@@ -18,24 +18,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
 
-    function ativarLinkNoScroll() {
-        const scrollPosition = window.scrollY + 100;
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.8 
+    };
 
-        sections.forEach(function(section) {
-            const id = section.getAttribute('id');
-            const navLink = document.querySelector(`nav ul li a[href="#${id}"]`);
-
-            if (navLink) {
-                if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                const id = entry.target.getAttribute('id');
+                const navLink = document.querySelector(`nav ul li a[href*="#${id}"]`);
+                if (navLink) {
                     navLink.classList.add('active');
-                } else {
-                    navLink.classList.remove('active');
                 }
             }
         });
-    }
+    }, observerOptions);
 
-    window.addEventListener('scroll', ativarLinkNoScroll);
-
-    ativarLinkNoScroll();
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
